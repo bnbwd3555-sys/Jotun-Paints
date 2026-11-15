@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102c25">
+<meta name="description" content="جوتن للدهانات والديكور - دهانات داخلية وخارجية واستيكو وترخيم وتحريق وترميم وديكورات في الرياض.">
+<title>جوتن | للدهانات والديكور</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--g:#12372c;--g2:#1b5140;--gold:#c7a66a;--cream:#f7f5ef;--dark:#17231f}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',Arial,sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1200px;margin:auto}
+header{position:sticky;top:0;z-index:10;background:#102c25f5;box-shadow:0 4px 20px #0002}
+.nav{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:18px}
+.logo{color:#fff;font-size:25px;font-weight:900}
+.logo span{color:var(--gold)}
+.logo small{display:block;font-size:10px;color:#ddd;letter-spacing:2px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:white;font-size:14px}
+nav a:hover{color:var(--gold)}
+.nav-btn,.btn-gold{background:var(--gold);color:#152b22!important;padding:10px 18px;border-radius:30px;font-weight:800}
+.menu{display:none;color:white;background:none;border:0;font-size:27px}
+.hero{min-height:590px;display:flex;align-items:center;background:linear-gradient(90deg,#071d18df,#102c25c9),url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85') center/cover;color:white}
+.hero-content{max-width:720px;padding:80px 0}
+.hero-label{color:var(--gold);font-weight:800;letter-spacing:2px}
+.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.5;margin:14px 0;font-weight:900}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:17px;line-height:2;color:#eee}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-block;padding:13px 25px;border-radius:8px;font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-outline{border:1px solid white;color:white}
+section{padding:78px 0}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head>span{color:#a9874c;font-weight:800}
+.section-head h2{font-size:32px;color:var(--g);margin:8px 0}
+.section-head p{color:#777;line-height:2}
+.line{width:60px;height:4px;background:var(--gold);margin:14px auto;border-radius:8px}
+.services,.decor,.contact{background:white}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#faf9f5;border:1px solid #eee;border-radius:13px;overflow:hidden;transition:.25s}
+.service:hover{transform:translateY(-5px);box-shadow:0 12px 28px #0001}
+.service img{width:100%;height:205px;object-fit:cover}
+.service-info{padding:20px}
+.service-info h3{color:var(--g);font-size:19px;margin-bottom:7px}
+.service-info p{color:#777;line-height:1.9;font-size:14px}
+.service-info a{display:inline-block;margin-top:12px;color:#98733a;font-weight:800}
+.about{background:var(--g);color:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
+.about-image img{width:100%;height:410px;object-fit:cover;border-radius:14px}
+.about-text h2{font-size:35px;color:var(--gold);margin:10px 0 18px}
+.about-text p{color:#e2e8e4;line-height:2.15;margin-bottom:13px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.feature{padding:12px;background:#ffffff12;border-radius:8px;border-right:3px solid var(--gold)}
+.stats{background:#eeeae0;padding:40px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:15px}
+.stat strong{display:block;color:var(--g);font-size:38px}
+.stat span{color:#777}
+.portfolio{background:#f7f5ef}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{background:white;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #0000000b}
+.work video,.work iframe{width:100%;height:260px;display:block;background:#111;object-fit:contain;border:0}
+.work-info{padding:16px}
+.work-info h3{color:var(--g)}
+.work-info p{color:#888;font-size:13px;margin-top:4px}
+.gallery-note{text-align:center;margin-top:22px;color:#777;font-size:13px}
+.decor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.decor-item{padding:22px 10px;text-align:center;background:#f8f6f0;border-radius:10px;border-bottom:3px solid var(--gold)}
+.decor-item .symbol{font-size:32px;margin-bottom:8px}
+.decor-item h3{color:var(--g);font-size:16px}
+.decor-item p{color:#888;font-size:12px;margin-top:5px}
+.why{background:#eae7df}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why-card{background:white;padding:23px 14px;text-align:center;border-radius:10px}
+.why-card h3{color:var(--g);margin:10px 0}
+.why-card p{color:#888;font-size:13px;line-height:1.9}
+.why-icon{font-size:32px}
+.cta{background:linear-gradient(120deg,#102c25,#245541);color:white;text-align:center}
+.cta h2{font-size:30px;margin-bottom:12px}
+.cta p{color:#ddd;line-height:2;margin-bottom:22px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{padding:27px;background:#f7f5ef;border-radius:12px}
+.contact-box h3{color:var(--g);margin-bottom:15px;font-size:22px}
+.contact-item{padding:13px 0;border-bottom:1px solid #ddd;line-height:2}
+.contact-item strong{color:var(--g)}
+.contact-item a{color:#98733a;font-weight:800}
+.contact-action{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--g);color:white;border-radius:12px;padding:30px}
+.contact-action h3{font-size:25px;margin-bottom:12px}
+.contact-action p{line-height:2;color:#ddd;margin-bottom:18px}
+footer{background:#0c211b;color:white;padding:32px 0;text-align:center}
+footer .logo{margin-bottom:10px}
+footer p{color:#aaa;font-size:13px;line-height:2}
+footer .copyright{border-top:1px solid #ffffff20;padding-top:18px;margin-top:18px;color:#aaa;font-size:12px}
+.whatsapp-float{position:fixed;bottom:20px;left:20px;z-index:9;background:#20bd65;color:white;width:58px;height:58px;display:flex;justify-content:center;align-items:center;border-radius:50%;font-size:27px;box-shadow:0 5px 20px #0003}
+@media(max-width:850px){
+.menu{display:block}
+nav{display:none;position:absolute;top:76px;right:0;width:100%;background:var(--g);padding:22px;flex-direction:column;align-items:stretch;gap:17px}
+nav.active{display:flex}
+nav .nav-btn{text-align:center}
+.services-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+.decor-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.about-image{order:2}
+}
+@media(max-width:550px){
+.container{width:92%}
+.hero{min-height:540px}
+.hero-content{padding:60px 0}
+.hero p{font-size:15px}
+.section-head h2{font-size:26px}
+.services-grid,.portfolio-grid{grid-template-columns:1fr}
+.decor-grid{grid-template-columns:repeat(2,1fr)}
+.why-grid{grid-template-columns:1fr 1fr}
+.stats-grid{grid-template-columns:1fr}
+.work video{height:230px}
+.about-image img{height:280px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a href="#home" class="logo">JOTUN <span>جوتن</span><small>للدهانات والديكور</small></a>
+<button class="menu" onclick="toggleMenu()" aria-label="القائمة">☰</button>
+<nav id="nav">
+<a href="#home" onclick="closeMenu()">الرئيسية</a>
+<a href="#services" onclick="closeMenu()">خدماتنا</a>
+<a href="#about" onclick="closeMenu()">من نحن</a>
+<a href="#portfolio" onclick="closeMenu()">معرض الأعمال</a>
+<a href="#decor" onclick="closeMenu()">الديكورات</a>
+<a href="#contact" onclick="closeMenu()">تواصل معنا</a>
+<a class="nav-btn" href="https://wa.me/966503983474">اطلب عرض سعر</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="hero-label">JOTUN PAINTS & DECORATION</div>
+<h1>نحوّل جدرانك إلى <span>لوحات فنية</span></h1>
+<p>جوتن للدهانات والديكور، خبرة واحترافية في عالم الدهانات الداخلية والخارجية والديكورات العصرية والكلاسيكية. نهتم بأدق التفاصيل لنمنح منزلك مظهراً يليق بك.</p>
+<div class="hero-buttons">
+<a class="btn btn-gold" href="https://wa.me/966503983474?text=السلام%20عليكم،%20أرغب%20في%20طلب%20عرض%20سعر">تواصل معنا واتساب</a>
+<a class="btn btn-outline" href="#portfolio">شاهد أعمالنا</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-head">
+<span>ماذا نقدم؟</span>
+<h2>خدماتنا وأعمالنا</h2>
+<div class="line"></div>
+<p>نقدم جميع أعمال الدهانات والتشطيبات والديكورات باحترافية وعناية.</p>
+</div>
+<div class="services-grid">
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85" alt="دهانات داخلية">
+<div class="service-info">
+<h3>الدهانات الداخلية</h3>
+<p>دهانات غرف النوم والمجالس والصالات والشقق والفلل بأجمل الألوان والتشطيبات.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85" alt="دهانات خارجية">
+<div class="service-info">
+<h3>الدهانات الخارجية</h3>
+<p>دهانات الواجهات والمباني والأسوار بمواد مناسبة للمناخ ومظهر أنيق.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85" alt="استيكو">
+<div class="service-info">
+<h3>الاستيكو</h3>
+<p>تنفيذ الاستيكو والديكورات الجدارية بملمس فخم ولمسات فنية.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=85" alt="الترخيم">
+<div class="service-info">
+<h3>الترخيم</h3>
+<p>تنفيذ أشكال الرخام الطبيعي والرخامي الديكوري للجدران والأسطح.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=800&q=85" alt="التحريق">
+<div class="service-info">
+<h3>التحريق والديكورات</h3>
+<p>تنفيذ التحريق والتأثيرات الفنية والتشطيبات المميزة للجدران.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85" alt="ترميم">
+<div class="service-info">
+<h3>الترميم والمعالجة</h3>
+<p>معالجة التشققات والتقشير وتجهيز الجدران قبل الدهان.</p>
+<a href="https://wa.me/966503983474">اطلب الخدمة ←</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=90" alt="أعمال الدهانات والديكور">
+</div>
+<div class="about-text">
+<span style="color:#d4b77e;font-weight:800">تعرف علينا</span>
+<h2>من نحن؟</h2>
+<p>نحن فريق جوتن للدهانات والديكور، دهانون محترفون ومتخصصون في أعمال البوية الداخلية والخارجية وجميع أنواع الديكورات.</p>
+<p>نمتلك خبرة تزيد عن 16 سنة في مجال الدهانات والتشطيبات، ونسعى دائماً إلى تقديم عمل متقن يجمع بين الجودة والجمال والاهتمام بأدق التفاصيل.</p>
+<p>هدفنا رضا العميل وتنفيذ العمل بالشكل الذي يتطلع إليه، من أول خطوة في تجهيز الجدران وحتى اللمسات النهائية.</p>
+<div class="features">
+<div class="feature">✓ خبرة أكثر من 16 سنة</div>
+<div class="feature">✓ جودة في التنفيذ</div>
+<div class="feature">✓ دقة في التفاصيل</div>
+<div class="feature">✓ أسعار مناسبة</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="container stats-grid">
+<div class="stat"><strong>16+</strong><span>سنوات من الخبرة</span></div>
+<div class="stat"><strong>جودة</strong><span>اهتمام بجودة العمل</span></div>
+<div class="stat"><strong>24/7</strong><span>استقبال الاستفسارات عبر واتساب</span></div>
+</div>
+</section>
+
+<section class="portfolio" id="portfolio">
+<div class="container">
+<div class="section-head">
+<span>إبداعنا يتحدث عنا</span>
+<h2>معرض أعمالنا</h2>
+<div class="line"></div>
+<p>شاهد نماذج من أعمالنا ومشاريع الدهانات والديكور.</p>
+</div>
+
+<div class="portfolio-grid">
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/18QCsEVHTjcgEbO-TBODFYjKw1J2vd72N/preview" title="فيديو أعمال جوتن رقم 1" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 1</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/19s0m7nwdx4br78z7YrQ6g1O8dXvf3y3m/preview" title="فيديو أعمال جوتن رقم 2" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 2</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/1DwDMmDhGT1e6w1v_igjum_RAmu3q9iE2/preview" title="فيديو أعمال جوتن رقم 3" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 3</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/1WXyhlJrjMhoUA54e5xb2A9VposIzgu03/preview" title="فيديو أعمال جوتن رقم 4" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 4</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/1vo62UGwEh7vL5yD2R0o-ZynFXXZerLhn/preview" title="فيديو أعمال جوتن رقم 5" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 5</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/13Oz2VT9uInpGRwF7upDvMbmbAh4HZuAT/preview" title="فيديو أعمال جوتن رقم 6" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 6</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/14OOijN31RqiAcaFsc13mPXFQV7dW6VBN/preview" title="فيديو أعمال جوتن رقم 7" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 7</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+<article class="work drive-work">
+<iframe src="https://drive.google.com/file/d/13EOCWmHJ61ms9Kl-nXbu-YFr1HKJ4ZmM/preview" title="فيديو أعمال جوتن رقم 8" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div class="work-info"><h3>أعمالنا ومشاريعنا 8</h3><p>شاهد تفاصيل التنفيذ وجودة التشطيب</p></div>
+</article>
+
+</div>
+<div class="gallery-note">الفيديوهات الثمانية معروضة من Google Drive. إذا لم يعمل فيديو، غيّر مشاركة ذلك الملف إلى «أي شخص لديه الرابط – مشاهد».</div>
+</div>
+</section>
+
+<section class="decor" id="decor">
+<div class="container">
+<div class="section-head">
+<span>التشطيبات واللمسات الفنية</span>
+<h2>جميع أنواع الدهانات والديكورات</h2>
+<div class="line"></div>
+<p>تشطيبات متنوعة حسب اختيار العميل وطبيعة المكان.</p>
+</div>
+<div class="decor-grid">
+<div class="decor-item"><div class="symbol">🎨</div><h3>البوية العادية</h3><p>دهانات داخلية وخارجية</p></div>
+<div class="decor-item"><div class="symbol">✨</div><h3>الاستيكو</h3><p>ديكورات جدارية فاخرة</p></div>
+<div class="decor-item"><div class="symbol">🏛️</div><h3>الترخيم</h3><p>تأثيرات الرخام</p></div>
+<div class="decor-item"><div class="symbol">🖌️</div><h3>التحريق</h3><p>لمسات فنية مميزة</p></div>
+<div class="decor-item"><div class="symbol">🧱</div><h3>الرشات</h3><p>رشات ديكورية وملمسية</p></div>
+<div class="decor-item"><div class="symbol">🏠</div><h3>الترميم</h3><p>ترميم وتجديد الجدران</p></div>
+<div class="decor-item"><div class="symbol">🪄</div><h3>المعجون والتأسيس</h3><p>تجهيز الأسطح والحوائط</p></div>
+<div class="decor-item"><div class="symbol">💎</div><h3>الدهانات الديكورية</h3><p>تأثيرات وتشطيبات عصرية</p></div>
+<div class="decor-item"><div class="symbol">🌟</div><h3>الفلفت والشمواه</h3><p>ملمس ناعم وفخم</p></div>
+<div class="decor-item"><div class="symbol">🪨</div><h3>الدهانات الحجرية</h3><p>مظهر حجري مميز</p></div>
+<div class="decor-item"><div class="symbol">🧰</div><h3>معالجة التشققات</h3><p>إصلاح وتجهيز الحوائط</p></div>
+<div class="decor-item"><div class="symbol">🏡</div><h3>دهانات الواجهات</h3><p>تشطيب خارجي احترافي</p></div>
+</div>
+</div>
+</section>
+
+<section class="why">
+<div class="container">
+<div class="section-head">
+<span>لماذا جوتن؟</span>
+<h2>اختيارك للجودة والإتقان</h2>
+<div class="line"></div>
+</div>
+<div class="why-grid">
+<div class="why-card"><div class="why-icon">🏆</div><h3>خبرة طويلة</h3><p>أكثر من 16 سنة في مجال الدهانات والديكور.</p></div>
+<div class="why-card"><div class="why-icon">🎯</div><h3>دقة وإتقان</h3><p>نهتم بالتفاصيل الصغيرة قبل الكبيرة.</p></div>
+<div class="why-card"><div class="why-icon">💰</div><h3>أسعار مناسبة</h3><p>جودة عالية وأسعار تناسب احتياجات العميل.</p></div>
+<div class="why-card"><div class="why-icon">🤝</div><h3>رضا العميل</h3><p>نحرص على تنفيذ العمل حسب الاتفاق.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2>هل تريد تجديد منزلك؟</h2>
+<p>دعنا نساعدك في اختيار الألوان والتصاميم المناسبة. تواصل معنا الآن واحصل على استشارة وعرض سعر.</p>
+<a class="btn btn-gold" href="https://wa.me/966503983474?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الدهانات%20والديكور">تواصل معنا الآن</a>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-head">
+<span>نحن بالقرب منك</span>
+<h2>تواصل معنا</h2>
+<div class="line"></div>
+<p>يسعدنا استقبال استفساراتكم وطلباتكم.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-box">
+<h3>معلومات التواصل</h3>
+<div class="contact-item"><strong>📱 رقم الواتساب:</strong><br><a href="https://wa.me/966503983474" dir="ltr">+966 50 398 3474</a></div>
+<div class="contact-item"><strong>📍 نطاق العمل:</strong><br>الرياض والمناطق المحيطة بها</div>
+<div class="contact-item"><strong>🎨 تخصصنا:</strong><br>الدهانات الداخلية والخارجية والديكورات والترميم.</div>
+</div>
+<div class="contact-action">
+<h3>جوتن للدهانات والديكور</h3>
+<p>أرسل لنا صور المكان أو تفاصيل العمل، وسنتواصل معك لمناقشة متطلباتك.</p>
+<a class="btn btn-gold" href="https://wa.me/966503983474?text=السلام%20عليكم،%20أرغب%20في%20طلب%20خدمة%20دهانات%20أو%20ديكور">تحدث معنا عبر واتساب</a>
+<p style="margin-top:18px;color:#d9c18e" dir="ltr">+966 50 398 3474</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="logo">JOTUN <span>جوتن</span></div>
+<p>للدهانات والديكور والتشطيبات الاحترافية</p>
+<p>خبرة أكثر من 16 سنة في عالم الدهانات والديكور.</p>
+<div class="copyright">جميع الحقوق محفوظة © <span id="year"></span> جوتن للدهانات والديكور</div>
+</div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/966503983474" target="_blank" rel="noopener" aria-label="واتساب">☏</a>
+
+<script>
+function toggleMenu(){
+document.getElementById('nav').classList.toggle('active');
+}
+function closeMenu(){
+document.getElementById('nav').classList.remove('active');
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
